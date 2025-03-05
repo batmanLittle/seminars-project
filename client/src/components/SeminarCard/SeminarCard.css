@@ -1,0 +1,35 @@
+.seminar-card {
+  border-radius: 8px;
+  background-color: rgba(128, 128, 128, 0.1);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.seminar-card__btns {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.seminar-card__btn {
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+}
+
+.seminar-card__img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.seminar-card h4 {
+  display: flex;
+  gap: 3px;
+}
+
+.seminar-card span {
+  font-weight: normal;
+}

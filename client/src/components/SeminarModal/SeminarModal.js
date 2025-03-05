@@ -1,6 +1,5 @@
 import "./SeminarModal.css";
 import Modal from "react-modal";
-import dayjs from "dayjs";
 
 const SeminarModal = ({
   updateSeminar,
@@ -9,7 +8,21 @@ const SeminarModal = ({
   editingSeminar,
   setEditingSeminar,
 }) => {
-  const formatDate = (date) => dayjs(date).format("DD.MM.YYYY");
+  const formatDateForDisplay = (isoDate) => {
+    if (!isoDate) return "";
+    const [year, month, day] = isoDate.split("-");
+    return `${day}.${month}.${year}`;
+  };
+
+  const formatDateForInput = (formattedDate) => {
+    if (!formattedDate) return "";
+    const [day, month, year] = formattedDate.split(".");
+    return `${year}-${month}-${day}`;
+  };
+
+  const isValidDate = (date) => {
+    return /^\d{2}\.\d{2}\.\d{4}$/.test(date);
+  };
 
   return (
     <Modal
@@ -47,15 +60,13 @@ const SeminarModal = ({
             Дата:
             <input
               type="date"
-              value={dayjs(editingSeminar.date, "DD.MM.YYYY").format(
-                "YYYY-MM-DD"
-              )}
-              onChange={(e) =>
-                setEditingSeminar({
-                  ...editingSeminar,
-                  date: formatDate(e.target.value),
-                })
-              }
+              value={formatDateForInput(editingSeminar.date)}
+              onChange={(e) => {
+                const formattedDate = formatDateForDisplay(e.target.value);
+                if (isValidDate(formattedDate)) {
+                  setEditingSeminar({ ...editingSeminar, date: formattedDate });
+                }
+              }}
             />
           </label>
           <label>

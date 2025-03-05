@@ -18,6 +18,8 @@
   background-color: black;
   color: white;
   border-radius: 5px;
+  border: 0px;
+  padding: 5px;
 }
 
 .seminar-card__img {

@@ -26,3 +26,7 @@ p {
 button {
   cursor: pointer;
 }
+
+input:focus {
+  color: black;
+}

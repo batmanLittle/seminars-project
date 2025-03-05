@@ -1,0 +1,17 @@
+# Исключаем зависимости
+node_modules/
+client/node_modules/
+server/node_modules/
+
+# Кэш и сборка
+client/build/
+server/build/
+client/.cache/
+server/.cache/
+client/.eslintcache
+server/.eslintcache
+
+# Лог-файлы
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

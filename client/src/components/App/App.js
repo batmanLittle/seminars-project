@@ -6,7 +6,7 @@ import Modal from "react-modal";
 import SeminarList from "../SeminarList/SeminarList";
 import SeminarModal from "../SeminarModal/SeminarModal";
 
-const API_URL = "https://seminars-project.onrender.com";
+const API_URL = "https://seminars-project.onrender.com/seminars";
 
 const App = () => {
   const [seminars, setSeminars] = useState([]);

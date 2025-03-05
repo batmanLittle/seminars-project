@@ -22,7 +22,7 @@ server.use(cors({ origin: "*", methods: "GET,POST,PUT,DELETE" }));
 server.use(middlewares);
 server.use(router);
 
-const PORT = 4000;
+const PORT = process.env.PORT || 4000;
 server.listen(PORT, () => {
-  console.log(`✅ JSON Server запущен на http://localhost:${PORT}`);
+  console.log(`✅ JSON Server запущен на порту ${PORT}`);
 });
